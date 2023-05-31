@@ -23,7 +23,7 @@ if TYPE_CHECKING:
     from _pytest.fixtures import SubRequest
 
 
-@pytest.fixture(name="default_rules_collection")
+@pytest.fixture(name="default_rules_collection", scope="session")
 def fixture_default_rules_collection() -> RulesCollection:
     """Return default rule collection."""
     assert DEFAULT_RULESDIR.is_dir()
